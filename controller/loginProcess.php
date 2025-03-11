@@ -1,7 +1,7 @@
 <?php
 session_start();
-include("../dB/config.php");
-include("../sweetalert.php");
+    include("../dB/config.php");
+    include("../sweetalert.php");
 
 
 if(isset($_POST['login'])){
@@ -52,7 +52,7 @@ if(isset($_POST['login'])){
         
         // Redirect based on role
         if($userRole == 'admin'){
-            $_SESSION['message'] = "Login successful";
+            $_SESSION['message'] = "Logged in as Admin";
             $_SESSION['code'] = "success";
             header("Location: ../view/admin/index.php");
         } elseif($userRole == 'user'){

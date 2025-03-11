@@ -29,11 +29,26 @@
     body {
         background: linear-gradient(135deg, rgb(219, 217, 217), rgb(219, 217, 217));
         width: 100%;
-        height: 100vh;
+        min-height: 100vh; /* Changed from height: 100vh; */
         display: flex;
         align-items: center;
         justify-content: center;
+        overflow: auto; /* Allow scrolling */
     }
+    .section.register {
+    width: 100%;
+    min-height: 100vh; /* Ensure it covers the whole page */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: auto;
+}
+.row.justify-content-center {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
     .card {
         background: rgba(255, 255, 255, 0.9);
@@ -51,6 +66,11 @@
     .custom-btn:hover {
         background-color: #4d1205 !important;
         border-color: #4d1205 !important;
+    }
+    .container {
+        width: 100%;
+        max-width: 100%;
+        overflow-y: auto;
     }
   </style>
 </head>
@@ -104,23 +124,25 @@
                     <div class="col-12">
                       <label for="phoneNumber" class="form-label">Phone Number</label>
                       <input type="text" name="phoneNumber" class="form-control" id="phoneNumber" required>
-                      <div class="invalid-feedback">Please enter your phone number.</div>
+                      <div class="invalid-feedback">Please enter your phone number!</div>
                     </div>
 
                     <div class="col-12">
                       <label class="col-12">Gender</label>
                         <div class="col-12">
                             <select name="gender" id="gender" class="form-select" required>
-                              <option selected>Select Gender</option>
+                              <option value="" disabled selected>Select Gender</option>
                               <option value="1">Male</option>
                               <option value="2">Female</option>
                             </select>
+                            <div class="invalid-feedback">Please select a gender!</div>
                         </div>
                     </div>
 
                     <div class="col-12">
                       <label for="inputDate" class="form-label">Birthday</label>
                       <input type="date" name="birthday" class="form-control" required>
+                      <div class="invalid-feedback">Please enter your birthda!.</div>
                     </div>
 
                     <div class="col-12 mt-4 mb-4 text-center">

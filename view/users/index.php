@@ -1,250 +1,218 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bloodinate</title>
-    <style>
-        /* Global Styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bloodinate</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        body {
-            background-color:rgb(74, 71, 71);
-            color: #333;
-        }
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f9;
+      color: #333;
+    }
 
-        /* Header Section */
-        header {
-            background-color: #D74624;
-            padding: 20px;
-            color: #fff;
-        }
+    header {
+      background-color: #e63946;
+      color: white;
+      padding: 20px 0;
+    }
 
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+    header .container {
+      width: 90%;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
 
-        .nav-links {
-            list-style-type: none;
-        }
+    h1 {
+      font-size: 24px;
+    }
 
-        .nav-links li {
-            display: inline;
-            margin-right: 20px;
-        }
+    nav ul {
+      list-style-type: none;
+      display: flex;
+    }
 
-        .nav-links a {
-            color: #fff;
-            text-decoration: none;
-            font-size: 18px;
-        }
+    nav ul li {
+      margin-right: 20px;
+    }
 
-        /* Hero Section */
-        .hero {
-            background: url('https://via.placeholder.com/1500x800') no-repeat center center/cover;
-            color: #fff;
-            padding: 80px 20px;
-            text-align: center;
-        }
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
 
-        .hero h2 {
-            font-size: 40px;
-            margin-bottom: 20px;
-        }
+    nav ul li a:hover {
+      text-decoration: underline;
+    }
 
-        .hero p {
-            font-size: 20px;
-            margin-bottom: 30px;
-        }
+    main {
+      width: 90%;
+      margin: 20px auto;
+    }
 
-        .hero .btn {
-            background-color: #ff6347;
-            color: #fff;
-            padding: 15px 30px;
-            text-decoration: none;
-            font-size: 18px;
-            border-radius: 5px;
-            transition: background-color 0.3s;
-        }
+    .section {
+      background-color: white;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 5px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
 
-        .hero .btn:hover {
-            background-color: #ff4500;
-        }
+    h2 {
+      margin-bottom: 15px;
+    }
 
-        /* About Section */
-        .about {
-            padding: 50px 20px;
-            background-color: #fff;
-            text-align: center;
-        }
+    .profile-info p {
+      margin-bottom: 10px;
+    }
 
-        .about h2 {
-            font-size: 30px;
-            margin-bottom: 20px;
-        }
+    form label {
+      display: block;
+      margin-bottom: 8px;
+    }
 
-        .about p {
-            font-size: 18px;
-            max-width: 800px;
-            margin: 0 auto;
-        }
+    form input {
+      padding: 10px;
+      width: 100%;
+      margin-bottom: 15px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
 
-        /* Donate Section */
-        .donate {
-            padding: 50px 20px;
-            background-color: #f9f9f9;
-            text-align: center;
-        }
+    form button {
+      padding: 10px 15px;
+      background-color: #e63946;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
 
-        .donate h2 {
-            font-size: 30px;
-            margin-bottom: 20px;
-        }
+    form button:hover {
+      background-color: #d62828;
+    }
 
-        .donate form {
-            max-width: 500px;
-            margin: 0 auto;
-            background-color: #fff;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
+    .donation-result {
+      margin-top: 10px;
+      font-weight: bold;
+      color: green;
+    }
 
-        .donate label {
-            display: block;
-            font-size: 16px;
-            margin-bottom: 10px;
-        }
+    footer {
+      background-color: #222;
+      color: white;
+      text-align: center;
+      padding: 10px 0;
+    }
 
-        .donate input, .donate select {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 20px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-        }
+    footer p {
+      font-size: 14px;
+    }
 
-        .donate button {
-            background-color: #e60000;
-            color: white;
-            padding: 15px 30px;
-            border: none;
-            border-radius: 5px;
-            font-size: 18px;
-            cursor: pointer;
-        }
-
-        .donate button:hover {
-            background-color: #ff4500;
-        }
-
-        /* Contact Section */
-        .contact {
-            padding: 50px 20px;
-            text-align: center;
-            background-color: #fff;
-        }
-
-        .contact h2 {
-            font-size: 30px;
-            margin-bottom: 20px;
-        }
-
-        .contact p {
-            font-size: 18px;
-        }
-
-        /* Footer Section */
-        footer {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 20px;
-        }
-    </style>
+    /* Styling for profile image */
+    .profile-info img.profile-image {
+      width: 100px; /* Adjust size as needed */
+      height: 100px;
+      border-radius: 50%; /* Makes the image circular */
+      object-fit: cover; /* Ensures the image fits inside the circular container */
+      margin-bottom: 15px; /* Space between the image and text */
+    }
+  </style>
 </head>
 <body>
-    <!-- Header Section -->
-    <header>
-        <nav>
-            <div class="logo">
-                <h1>Donate Blood, Save Life</h1>
-            </div>
-            <ul class="nav-links">
-                <li><a href="#">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#donate">Donate</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <a class="dropdown-item d-flex align-items-center" href="../../view/admin/controller/logout.php">
-                <i class="bi bi-box-arrow-right"></i>
-                <span>Sign Out</span>
-              </a>
-            </ul>
-        </nav>
-    </header>
+  <header>
+    <div class="container">
+      <h1>Blood Donation</h1>
+      <nav>
+        <ul>
+          <li><a href="#profile">Profile</a></li>
+          <li><a href="#donate">Donate</a></li>
+          <li><a href="#history">Donation History</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <a class="dropdown-item d-flex align-items-center" href="../../view/admin/controller/logout.php">
+            <i class="bi bi-box-arrow-right"></i>
+            <span>Sign Out</span>
+          </a>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-    <!-- About Section -->
-    <section id="about" class="about">
-        <h2>About Blood Donation</h2>
-        <p>Blood donation plays a crucial role in saving lives, especially during emergencies or for patients battling chronic illnesses. By donating blood, you’re making a direct impact on the lives of others—your donation could be the one that helps someone in need.</p>
+  <main>
+    <section id="profile" class="section">
+      <h2>Your Profile</h2>
+      <div class="profile-info">
+        <!-- Profile Image -->
+        <img src="assets/img/messages-1.jpg" alt="Profile Image" class="profile-image">
+        <p><strong>Name:</strong> John Doe</p>
+        <p><strong>Email:</strong> john@example.com</p>
+        <p><strong>Blood Type:</strong> O+</p>
+        <p><strong>Last Donation:</strong> 2024-01-10</p>
+      </div>
     </section>
 
-    <!-- Donate Section -->
-    <section id="donate" class="donate">
-        <h2>Become a Donor</h2>
-        <p>Fill in the form below to begin your donation journey.</p>
-
-        <form action="#" method="POST" id="donation-form">
-            <label for="name">Full Name</label>
-            <input type="text" id="name" name="name" required>
-
-            <label for="email">Email Address</label>
-            <input type="email" id="email" name="email" required>
-
-            <label for="phone">Phone Number</label>
-            <input type="tel" id="phone" name="phone" required>
-
-            <label for="age">Age</label>
-            <input type="number" id="age" name="age" required>
-
-            <label for="blood-type">Blood Type</label>
-            <select id="blood-type" name="blood-type" required>
-                <option value="A+">A+</option>
-                <option value="B+">B+</option>
-                <option value="O+">O+</option>
-                <option value="AB+">AB+</option>
-                <option value="A-">A-</option>
-                <option value="B-">B-</option>
-                <option value="O-">O-</option>
-                <option value="AB-">AB-</option>
-            </select>
-
-            <button type="submit" class="btn">Submit Donation</button>
-        </form>
+    <section id="donate" class="section">
+      <h2>Make a Donation</h2>
+      <form id="donateForm">
+        <label for="donationAmount">Donation Amount (in liters):</label>
+        <input type="number" id="donationAmount" name="donationAmount" required min="0.1" step="0.1">
+        <button type="submit">Donate</button>
+      </form>
+      <div id="donationResult" class="donation-result"></div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <h2>Contact Us</h2>
-        <p>If you have any questions or would like more information, feel free to reach out.</p>
-        <p>Email: dayaomahinay@blooddonate.org</p>
-        <p>Phone: +1 800 123 4567</p>
+    <section id="history" class="section">
+      <h2>Donation History</h2>
+      <ul>
+        <li>2024-01-10: 0.5L donated</li>
+        <li>2023-11-15: 0.4L donated</li>
+        <li>2023-08-20: 0.6L donated</li>
+      </ul>
     </section>
 
-    <!-- Footer Section -->
-    <footer>
-        <p>&copy; 2025 Blood Donation Organization. All rights reserved.</p>
-    </footer>
+    <section id="contact" class="section">
+      <h2>Contact Us</h2>
+      <p>If you have any questions, feel free to reach out to us at <a href="mailto:support@blooddonation.com">support@blooddonation.com</a>.</p>
+    </section>
+  </main>
 
-    <script src="assets/js/main.js"></script>
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Blood Donation. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("donateForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const donationAmount = document.getElementById("donationAmount").value;
+      const donationResult = document.getElementById("donationResult");
+
+      if (donationAmount && donationAmount > 0) {
+        donationResult.textContent = `You have donated ${donationAmount}L. Thank you for your generosity!`;
+        donationResult.style.color = "green";
+      } else {
+        donationResult.textContent = "Please enter a valid donation amount.";
+        donationResult.style.color = "red";
+      }
+
+      document.getElementById("donateForm").reset();
+    });
+  </script>
+
+  <script src="assets/js/main.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
   <?php
   if(isset($_SESSION['message']) && $_SESSION['code'] !='') {
       ?>
@@ -269,7 +237,6 @@
       unset($_SESSION['message']);
       unset($_SESSION['code']);
   }     
-?>
-
+  ?>
 </body>
 </html>
